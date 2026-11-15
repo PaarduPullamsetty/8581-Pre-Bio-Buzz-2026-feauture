@@ -119,7 +119,7 @@ public class AllFunctions extends LinearOpMode {
             {
                 intakeSubsystem.runBackward(0.8);
             }
-            if(gamepad1.dpadLeftWasPressed())
+            if(gamepad1.dpadLeftWasPressed() ||gamepad1.dpadRightWasPressed())
             {
                 intakeSubsystem.stop();
             }

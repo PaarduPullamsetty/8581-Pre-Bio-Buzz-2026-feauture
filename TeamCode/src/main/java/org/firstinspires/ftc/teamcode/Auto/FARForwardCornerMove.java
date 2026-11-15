@@ -16,7 +16,7 @@ public class FARForwardCornerMove extends LinearOpMode {
     public double elapsed;
 
     //Change to add a strafe for proper parking
-   
+
 
     @Override
     public void runOpMode() {

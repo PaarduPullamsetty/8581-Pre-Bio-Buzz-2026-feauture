@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.Subsystems.DriveTankSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.FlyWheelSubsystem;
+import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.TransferSubsystem;
 
 @Config
@@ -16,13 +17,15 @@ public class MoveAndShoot extends LinearOpMode {
     FlyWheelSubsystem flyWheelSubsystem = new FlyWheelSubsystem();
     DriveTankSubsystem driveTankSubsystem = new DriveTankSubsystem();
     TransferSubsystem transferSubsystem = new TransferSubsystem();
+
+    IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
     ElapsedTime timer = new ElapsedTime();
 
     double elapsed;
     double timeOccuring = 0.0;
 
     //MUST BE MORE THAN 6 AND THAN THE DIF IS ACTUAL VALUE
-    public static double moveTime = 11.0;
+    public static double moveTime = 9;
 
 
 
@@ -32,6 +35,8 @@ public class MoveAndShoot extends LinearOpMode {
         flyWheelSubsystem.init(hardwareMap);
         driveTankSubsystem.init(hardwareMap);
         transferSubsystem.init(hardwareMap);
+        intakeSubsystem.init(hardwareMap);
+
 
 
 
@@ -65,28 +70,32 @@ public class MoveAndShoot extends LinearOpMode {
             if (elapsed >= t && elapsed < t + 5) {
                 flyWheelSubsystem.runToVelocity();
                 transferSubsystem.runIn(1);
+                intakeSubsystem.runForward(0.8);
             }
 
             else if (elapsed >= t + 5 && elapsed < t + 6) {
                 flyWheelSubsystem.runToZero();
                 transferSubsystem.stop();
+                intakeSubsystem.stop();
             }
-
+            //Moves under the hive
             else if (elapsed >= t + 6 && elapsed < t + moveTime) {
                 driveTankSubsystem.moveForward(0.5);
             }
-
+            //Strafes to park zone
             else if (elapsed >= t + moveTime && elapsed < t + moveTime + 4) {
                 driveTankSubsystem.strafe(0.5);
             }
-
-            else if (elapsed >= t + (moveTime + 4) && elapsed < t + (moveTime + 4.25)) {
+            //Strafes out a little to avoid touching the wall
+            else if (elapsed >= t + (moveTime + 4) && elapsed < t + (moveTime + 4.1)) {
                 driveTankSubsystem.strafe(-0.5);
             }
-
-            else if (elapsed >= t + (moveTime + 4.25)) {
+            //Stops
+            else if (elapsed >= t + (moveTime + 4.15)) {
                 driveTankSubsystem.stopMove();
             }
+
+
 
           /*  if (elapsed >= timeOccuring) {
                 flyWheelSubsystem.runToVelocity(); //1300
