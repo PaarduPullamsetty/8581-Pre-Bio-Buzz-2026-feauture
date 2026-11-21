@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.mechanisms.MainConfig;
 
-@TeleOp(name = "WCDtest", group = "Drives")
+//@TeleOp(name = "WCDtest", group = "Drives")
 public class WCDtest extends OpMode {
 
     public MainConfig config = new MainConfig();

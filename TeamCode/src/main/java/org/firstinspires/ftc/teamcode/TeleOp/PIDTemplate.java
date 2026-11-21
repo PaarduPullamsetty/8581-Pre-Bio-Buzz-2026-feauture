@@ -65,7 +65,7 @@ import org.firstinspires.ftc.teamcode.mechanisms.MainConfig;
  *  Wrong gains can make a motor spin hard.
  * =====================================================================================
  */
-@TeleOp(name = "PID Template", group = "Template")
+//@TeleOp(name = "PID Template", group = "Template")
 public class PIDTemplate extends LinearOpMode {
 
     // ---------------------------------------------------------------------------------
