@@ -11,9 +11,9 @@ import org.firstinspires.ftc.teamcode.Subsystems.DriveTankSubsystem;
 public class FARForwardCornerMove extends LinearOpMode {
 
     DriveTankSubsystem driveTankSubsystem = new DriveTankSubsystem();
-    ElapsedTime timer = new ElapsedTime();
+   // ElapsedTime timer = new ElapsedTime();
 
-    public double elapsed;
+    //public double elapsed;
 
     //Change to add a strafe for proper parking
 
@@ -21,12 +21,14 @@ public class FARForwardCornerMove extends LinearOpMode {
     @Override
     public void runOpMode() {
 
-        waitForStart();
-        timer.reset();
-        if (opModeIsActive()) {
-            elapsed = timer.seconds();
+        driveTankSubsystem.init(hardwareMap);
 
-            telemetry.addData("Time ", "%.2f secs", elapsed);
+        waitForStart();
+
+        if (opModeIsActive()) {
+            //elapsed = timer.seconds();
+
+
             telemetry.update();
             driveTankSubsystem.backLeft.setPower(0.5);
             driveTankSubsystem.backRight.setPower(0.5);

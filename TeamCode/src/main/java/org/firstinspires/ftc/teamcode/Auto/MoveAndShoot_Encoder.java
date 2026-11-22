@@ -11,7 +11,7 @@ import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.TransferSubsystem;
 
 @Config
-@Autonomous(name = "Move And Shoot", group = "Final")
+@Autonomous(name = "Move And Shoot ENCODER", group = "Final")
 public class MoveAndShoot_Encoder extends LinearOpMode {
 
     //ADD ENCODERS

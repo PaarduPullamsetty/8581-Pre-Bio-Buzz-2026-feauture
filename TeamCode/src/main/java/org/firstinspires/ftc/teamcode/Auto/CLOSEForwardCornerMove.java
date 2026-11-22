@@ -21,6 +21,8 @@ public class CLOSEForwardCornerMove extends LinearOpMode {
     @Override
     public void runOpMode() {
 
+        driveTankSubsystem.init(hardwareMap);
+
         waitForStart();
         if (opModeIsActive()) {
             // Put run blocks here.

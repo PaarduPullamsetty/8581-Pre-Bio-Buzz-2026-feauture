@@ -36,9 +36,6 @@ public class AllFunctions extends LinearOpMode {
         driveTankSubsystem.init(hardwareMap);
         transferSubsystem.init(hardwareMap);
 
-
-
-
         waitForStart();
 
 
