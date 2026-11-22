@@ -13,7 +13,7 @@ public class CLOSEForwardMove_Encoder extends LinearOpMode {
 
     DriveTankSubsystem driveTankSubsystem = new DriveTankSubsystem();
 
-    public static int targetPos = 1500;
+    public static int targetPos = 1000;
 
     public static double leftPow = 0.3;
     public static double rightPow = 0.32;

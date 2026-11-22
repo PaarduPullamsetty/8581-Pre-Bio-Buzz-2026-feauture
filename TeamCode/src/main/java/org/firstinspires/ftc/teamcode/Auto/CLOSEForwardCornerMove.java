@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.Subsystems.DriveTankSubsystem;
 
-@Autonomous(name = "CLOSEForwardCornerMove (Blocks to Java)")
+//@Autonomous(name = "CLOSEForwardCornerMove (Blocks to Java)")
 public class CLOSEForwardCornerMove extends LinearOpMode {
 
     DriveTankSubsystem driveTankSubsystem = new DriveTankSubsystem();
